@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Item;
+use  App\Item;
 
-class HomeController extends Controller
+class HomeController
+    extends Controller
 {
-    public function index()
-    {
-        return view('home', ['items' => Item::future()->simplePaginate(20)]);
+    function index() {
+        return view(
+            'home', [ 'items' => Item::future( )->simplePaginate(20)] );
     }
 
-    public function api()
-    {
-        return Item::future()->get();
+    function api(){
+        return Item::future()->get(  );
+
+
     }
 }
