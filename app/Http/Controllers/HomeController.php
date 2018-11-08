@@ -12,6 +12,4 @@ class HomeController
             'home', [ 'items' => Item::future(   )->simplePaginate(20)] );
 
 
-    }
-
-}
+    }}
