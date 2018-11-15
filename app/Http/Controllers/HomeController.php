@@ -9,8 +9,8 @@ class HomeController
 {
     function index() {
         return view(
-            'home', [ 'items' => Item::future(   )
-                ->simplePaginate(20)] );
-
+            'home',
+            [ 'items' => Item::future(   )
+            ->simplePaginate(20)] );
 
     }}
