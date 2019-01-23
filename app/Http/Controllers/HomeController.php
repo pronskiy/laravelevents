@@ -1,16 +1,14 @@
 <?php
 
-NAMESPACE App\Http\Controllers;
+namespace App\Http\Controllers;
 
-USE App\Item;
+use App\Item;
 
 class HomeController
-    extends Controller
-{
-    function index() {
+    extends Controller {
+            public function index() {
         return view(
             'home',
-            [ 'items' => Item::future(   )
-            ->simplePaginate(20)] );
+            ['items' => Item::future(   )->simplePaginate(20)] );
 
     }}
