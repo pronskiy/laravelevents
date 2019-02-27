@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
+use App\Item;
 use UploadCare;
 use Illuminate\Http\Request;
 
@@ -16,15 +16,15 @@ class ManageEventsController extends Controller
     public function index()
     {
         return view('manage.index', [
-            'pending' => Event::pending(),
-            'future' => Event::future()->get()
+            'pending' => Item::pending(),
+            'future' => Item::future()->get()
         ]);
     }
 
     public function edit($id)
     {
         return view('manage.edit', [
-            'event' => Event::findOrFail($id),
+            'event' => Item::findOrFail($id),
         ]);
     }
 
@@ -54,7 +54,7 @@ class ManageEventsController extends Controller
             $image->store();
         }
 
-        $event = Event::findOrFail($id);
+        $event = Item::findOrFail($id);
 
         $event->update([
             'title' => $validated['title'],
@@ -72,7 +72,7 @@ class ManageEventsController extends Controller
 
     public function destroy($id)
     {
-        $event = Event::findOrFail($id);
+        $event = Item::findOrFail($id);
         $event->delete();
         return back()->withMessage('Event deleted.');
     }

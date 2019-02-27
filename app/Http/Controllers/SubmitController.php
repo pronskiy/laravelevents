@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
-use App\Event;
+use App\Item;
 use App\Mail\EventCreated;
 use UploadCare;
 
@@ -40,7 +40,7 @@ class SubmitController extends Controller
             $image->store();
         }
 
-        $event = Event::create([
+        $event = Item::create([
             'title' => $validated['title'],
             'description' => $validated['description'],
             'url' => $validated['url'],

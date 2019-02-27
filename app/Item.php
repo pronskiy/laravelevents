@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\View;
-use Spatie\Feed\Feedable;
-use Spatie\Feed\FeedItem;
+//use Spatie\Feed\Feedable;
+//use Spatie\Feed\FeedItem;
 
-class Item extends Model implements Feedable
+class Item extends Model /*implements Feedable*/
 {
     use SoftDeletes;
 
@@ -40,21 +40,21 @@ class Item extends Model implements Feedable
             ->get();
     }
 
-    /**
-     * @return array|\Spatie\Feed\FeedItem
-     */
-    public function toFeedItem()
-    {
-        $summary = View::make('feedItem', ['event' => $this])->render();
-
-        return FeedItem::create()
-            ->id($this->id)
-            ->title($this->title)
-            ->author('')
-            ->summary($summary)
-            ->updated($this->updated_at)
-            ->link($this->url);
-    }
+//    /**
+//     * @return array|\Spatie\Feed\FeedItem
+//     */
+//    public function toFeedItem()
+//    {
+//        $summary = View::make('feedItem', ['event' => $this])->render();
+//
+//        return FeedItem::create()
+//            ->id($this->id)
+//            ->title($this->title)
+//            ->author('')
+//            ->summary($summary)
+//            ->updated($this->updated_at)
+//            ->link($this->url);
+//    }
 
     public static function getFeedItems()
     {

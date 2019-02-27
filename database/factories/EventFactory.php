@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(\App\Event::class, function (Faker $faker) {
+$factory->define(\App\Item::class, function (Faker $faker) {
     return [
         'title' => $faker->jobTitle,
         'description' => $faker->paragraph,

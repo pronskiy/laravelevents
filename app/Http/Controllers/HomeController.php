@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Item;
 
-class HomeController
-    extends Controller {
-            public function index() {
+class HomeController extends Controller
+{
+    public function index()
+    {
         return view(
             'home',
-            ['items' => Item::future(   )->simplePaginate(20)] );
-
-    }}
+            ['items' => Item::future()->simplePaginate(20)]
+        );
+    }
+}
