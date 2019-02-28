@@ -18,3 +18,5 @@ class unusedChildClass extends usedClass
 }
 
 (new usedClass())->secondMethod();
+
+
