@@ -19,4 +19,14 @@ class unusedChildClass extends usedClass
 
 (new usedClass())->secondMethod();
 
+/**
+ * @return usedClass[]
+ */
+function test()
+{
+    return [new usedClass(), new usedClass()];
+}
 
+foreach (test() as $usedClass) {
+    $usedClass->firstMethod();
+}
