@@ -19,14 +19,40 @@ class unusedChildClass extends usedClass
 
 (new usedClass())->secondMethod();
 
-/**
- * @return usedClass[]
- */
-function test()
+
+
+
+
+
+
+class Car
 {
-    return [new usedClass(), new usedClass()];
+    private $engine;
+    private $wheels;
+
+    public function __construct(
+        Engine $engine,
+        array $wheels
+    ) {
+        $this->engine = $engine;
+        $this->wheels = $wheels;
+    }
+
+    public function drive()
+    {
+        $this->engine->connectTo($this->wheels);
+        $this->engine->start();
+        $this->engine->accelerate();
+    }
 }
 
-foreach (test() as $usedClass) {
-    $usedClass->firstMethod();
+new Car(new Engine(), []);
+
+
+class Engine
+{
+    public function connectTo(array $wheels){}
+    public function start(){}
+    public function accelerate(){}
+
 }
