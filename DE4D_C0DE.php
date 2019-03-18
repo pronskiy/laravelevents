@@ -10,6 +10,7 @@ class usedClass
     {
     }
 }
+
 class unusedChildClass extends usedClass
 {
     public function secondMethod()
