@@ -2,23 +2,23 @@
 
 class usedClass
 {
-    public function firstMethod()
+    public function unusedMethod()
     {
     }
 
-    public function secondMethod()
+    public function usedMethod()
     {
     }
 }
 
 class unusedChildClass extends usedClass
 {
-    public function secondMethod()
+    public function usedMethod()
     {
     }
 }
 
-(new usedClass())->secondMethod();
+(new usedClass())->usedMethod();
 
 
 
