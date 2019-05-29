@@ -1,0 +1,17 @@
+// No Cookies here
+GET https://httpbin.org/cookies
+Accept: application/json
+
+###
+
+// Let's set cookie ide=phpstorm
+GET https://httpbin.org/cookies/set/ide/phpstorm
+Accept: application/json
+
+###
+
+// Now here it'll be sent to the server
+GET https://httpbin.org/cookies
+Accept: application/json
+
+###
