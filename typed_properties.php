@@ -1,13 +1,13 @@
 <?php
 
-class User
-{
-    public int $id;
-    public string $name;
+namespace App;
 
-    public function __construct(int $id, string $name)
-    {
-        $this->id = $id;
-        $this->name = $name;
-    }
+class Engine {}
+
+class Car
+{
+    public Engine $engine;
 }
+
+$foo = new Car;
+$foo->engine = new Car;
