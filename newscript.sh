@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-VERSION=$1
-TMP_DIR="/tmp/$VERSION"
+TMP_DIR="/tmp/$1"
 
 cd $TMP_DIR;
