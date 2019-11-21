@@ -1,20 +1,14 @@
+GET https://httpbin.org/ip
+Accept: application/json
+
+###
+
 POST https://httpbin.org/post
 Content-Type: application/json
 
 {
   "ide": "PhpStorm",
-  "version": 2019.3,
-  "build": "EAP #3"
+  "version": "2019.3",
+  "releaseDate": "2019-11-28T09:00"
 }
 
-###
-
-GET https://jetbrains.com
-
-###
-
-GET https://swapi.co/api/starships/
-
-###
-
-GET 
