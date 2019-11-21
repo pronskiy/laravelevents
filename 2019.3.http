@@ -1,12 +1,13 @@
-GET https://httpbin.org/bytes/42
+GET https://httpbin.org/ip
+Accept: application/json
 
-> {%
-client.global.set("randomBytes", response.body);
-%}
 ###
 
 POST https://httpbin.org/post
+Content-Type: application/json
 
-{{randomBytes}}
-
-###
+{
+  "ide": "PhpStorm",
+  "version": "2019.3",
+  "releaseDate": "2019-11-28T09:00"
+}
