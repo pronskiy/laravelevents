@@ -1,0 +1,12 @@
+GET https://httpbin.org/bytes/42
+
+> {%
+client.global.set("randomBytes", response.body);
+%}
+###
+
+POST https://httpbin.org/post
+
+{{randomBytes}}
+
+###

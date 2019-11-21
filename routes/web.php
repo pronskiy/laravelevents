@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/api', 'HomeController@api');
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/api', [HomeController::class, 'api']);
 Route::get('/submit', 'SubmitController@index')->name('submit');
 Route::post('/submit', 'SubmitController@store');
 Route::get('/cp', function(){ return redirect('/cp/manage'); });

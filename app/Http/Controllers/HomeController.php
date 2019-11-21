@@ -13,4 +13,10 @@ class HomeController extends Controller
             ['items' => Item::future()->simplePaginate(20)]
         );
     }
+
+    public function testAction()
+    {
+
+    }
 }
+

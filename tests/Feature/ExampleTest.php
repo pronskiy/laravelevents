@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Item;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -14,8 +15,16 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $item = factory(Item::class)->create();
 
-        $response->assertStatus(200);
+        $item = factory_create(Item::class);
+        $item->
     }
+
+
+}
+
+function factory_create($class)
+{
+    return factory(Item::class)->create();
 }
